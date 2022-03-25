@@ -174,6 +174,6 @@ def north_west_and_step(supply, demand, costs):
 
     print()
     print("cost of this is:")
-    print(np.sum(np.array(op) * np.arry(costs)))
+    print(np.sum(np.array(op) * np.array(costs)))
 
     return ""
