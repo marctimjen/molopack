@@ -171,4 +171,9 @@ def north_west_and_step(supply, demand, costs):
     costs = np.array(costs)
 
     op = cheap_scape(res, costs)
+
+    print()
+    print("cost of this is:")
+    print(np.sum(np.array(op) * np.arry(costs)))
+
     return ""
