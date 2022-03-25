@@ -172,8 +172,17 @@ def north_west_and_step(supply, demand, costs):
 
     op = cheap_scape(res, costs)
 
+    optimal = op[:]
+
+    for i in range(len(op)):
+        for j in range(len(op[0])):
+            if op[i][j] == "-":
+                optimal[i][j] = 0
+            optimal[i][j] = int(optimal[i][j])
+
+
     print()
     print("cost of this is:")
-    print(np.sum(np.array(op) * np.array(costs)))
+    print(np.sum(np.array(optimal) * np.array(costs)))
 
     return ""
