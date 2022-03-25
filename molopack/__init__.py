@@ -1,1 +1,1 @@
-from molopack.functions import hello
+from .functions.hello import hello
