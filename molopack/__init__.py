@@ -1,1 +1,1 @@
-from functions.hello import hello
+from .hello import hello
