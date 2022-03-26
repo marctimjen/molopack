@@ -1,4 +1,52 @@
 import numpy as np
+import pandas as pd
+
+def print_table(mat, sup, tar, i, j, s, t):
+    mat = np.concatenate((mat, [tar]), axis = 0)
+    pd_df = pd.DataFrame(mat)
+    sup = np.concatenate((sup, [0]))
+    pd_df["supply"] = sup
+    q = pd_df.style.format()
+
+    q.set_table_styles([  # create internal CSS classes
+    {'selector': '.re', 'props': 'background-color: #FF0000;'},
+    {'selector': '.bl', 'props': 'background-color: #0000FF;'},
+    {'selector': '.or', 'props': 'background-color: #FFA500;'},
+    {'selector': 'td', 'props': 'text-align: center; font-weight: bold;'},
+    ], overwrite=False)
+
+
+    le = len(mat)
+    c_mat = np.array([['bb ' if i != le else 'or ' for i in range(le + 1)] for _ in range(len(mat[0]) - 1)])
+    ex = [['or ' for i in range(le)] + ['bb ']]
+
+    c_mat[i, j] = 're '
+
+    c_mat = np.concatenate((c_mat, ex), axis = 0)
+
+    for i in range(len(s)):
+        if not(s[i]):
+            c_mat[i] = 'bl '
+
+    for i in range(len(t)):
+        if not(t[i]):
+            c_mat[..., i] = 'bl '
+
+
+    #cell_color = pd.DataFrame(np.array([['re ', 're ', 're ', 're', 'or '],
+    #                           ['re ', 'bl ', 'bl ', 're', 'or '],
+    #                           ['re ', 're ', 're ', 're', 'or '],
+    #                           ['or ', 'or ', 'or ', 'or ', 'bb ']]),
+    #                      index=pd_df.index,
+    #                      columns=pd_df.columns[:10])
+
+    cell_color = pd.DataFrame(c_mat,
+                          index=pd_df.index,
+                          columns=pd_df.columns[:10])
+    q.set_td_classes(cell_color)
+
+    return q
+
 
 def vogel(S, T, costs):
 
@@ -40,6 +88,7 @@ def vogel(S, T, costs):
             idx_r = np.nanargmax(d_r)
             idx_c = np.nanargmin(nan_gen(t, cost[idx_r, t]))
             send = min([sup[idx_r], tar[idx_c]])
+            display(print_table(cost, sup, tar, idx_r, idx_c, s, t))
             out[idx_r, idx_c] = send
 
             sup[idx_r] = sup[idx_r] - send
@@ -48,10 +97,12 @@ def vogel(S, T, costs):
             idx_c = np.nanargmax(d_c)
             idx_r = np.nanargmin(nan_gen(s, cost[s, idx_c]))
             send = min([sup[idx_r], tar[idx_c]])
+            display(print_table(cost, sup, tar, idx_r, idx_c, s, t))
             out[idx_r, idx_c] = send
 
             sup[idx_r] = sup[idx_r] - send
             tar[idx_c] = tar[idx_c] - send
+
 
 
         for i in range(len(sup)):
