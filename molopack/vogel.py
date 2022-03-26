@@ -47,8 +47,11 @@ def print_table(mat, sup, tar, i, j, s, t):
 
     return q
 
+def printer(cost, sup, tar, idx_r, idx_c, s, t, bool = False):
+    if bool:
+        display(print_table(cost, sup, tar, idx_r, idx_c, s, t))
 
-def vogel(S, T, costs):
+def vogel(S, T, costs, printe = False):
 
     def nan_gen(it, obj):
         ls = np.array([])
@@ -88,7 +91,7 @@ def vogel(S, T, costs):
             idx_r = np.nanargmax(d_r)
             idx_c = np.nanargmin(nan_gen(t, cost[idx_r, t]))
             send = min([sup[idx_r], tar[idx_c]])
-            display(print_table(cost, sup, tar, idx_r, idx_c, s, t))
+            printer(bool = printe)
             out[idx_r, idx_c] = send
 
             sup[idx_r] = sup[idx_r] - send
@@ -97,7 +100,7 @@ def vogel(S, T, costs):
             idx_c = np.nanargmax(d_c)
             idx_r = np.nanargmin(nan_gen(s, cost[s, idx_c]))
             send = min([sup[idx_r], tar[idx_c]])
-            display(print_table(cost, sup, tar, idx_r, idx_c, s, t))
+            printer(bool = printe)
             out[idx_r, idx_c] = send
 
             sup[idx_r] = sup[idx_r] - send
