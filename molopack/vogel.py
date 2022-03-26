@@ -97,24 +97,3 @@ def vogel(S, T, costs):
     print(np.sum(np.array(out) * np.array(cost)))
 
     return out
-
-
-
-
-
-
-
-supply = [6, 3, 5]
-demand = [2, 3, 2, 7]
-
-costs = np.array([[7, 11, 3, 8],
-                  [2, 10, 1, 2],
-                  [14, 18, 8, 5]])
-
-supply = [5, 5, 6]
-demand = [2, 2, 4, 4, 4]
-costs = [[10, 1, 1, 1, 1],
-         [1, 1, 1, 1, 1],
-         [1, 1, 1, 1, 50]]
-
-vogel(supply, demand, costs)
