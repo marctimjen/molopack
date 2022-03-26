@@ -17,5 +17,5 @@ setuptools.setup(
     },
     license='MIT',
     packages=['molopack'],
-    install_requires=['numpy', 'pandas'],
+    install_requires=['numpy', 'pandas', 'IPython'],
 )

@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from IPython.display import display
 
 def print_table(mat, sup, tar, i, j, s, t):
     mat = np.concatenate((mat, [tar]), axis = 0)
