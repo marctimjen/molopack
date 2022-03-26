@@ -16,8 +16,8 @@ def print_table(mat, sup, tar, i, j, s, t):
     ], overwrite=False)
 
 
-    le = len(mat)
-    c_mat = np.array([['bb ' if i != le else 'or ' for i in range(le + 1)] for _ in range(len(mat[0]) - 1)])
+    le = len(mat[0])
+    c_mat = np.array([['bb ' if i != le else 'or ' for i in range(le + 1)] for _ in range(len(mat) - 1)])
     ex = [['or ' for i in range(le)] + ['bb ']]
 
     c_mat[i, j] = 're '
