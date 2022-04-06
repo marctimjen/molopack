@@ -64,12 +64,14 @@ def padberg(ls, val, printer = False):
             print(f"0 <= {val}", end = "\n\n")
 
     if printer:
-        print("Thus the LCI becomes:")
-        for (j, i) in zip(coef, range(1, len(coef) + 1)):
-            print(f"{j}*d{i}", end = " + ")
-        print(f"0 <= {nr}")
+        print("From the inequality:")
         for (j, i) in zip(ls, range(1, len(ls) + 1)):
             print(f"{j}*d{i}", end = " + ")
         print(f"0 <= {val}")
+        print("Padbergs procedure results in the LCI:")
+        for (j, i) in zip(coef, range(1, len(coef) + 1)):
+            print(f"{j}*d{i}", end = " + ")
+        print(f"0 <= {nr}")
+
 
     return ls, coef
