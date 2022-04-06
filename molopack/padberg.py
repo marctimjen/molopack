@@ -15,7 +15,7 @@ def minimal_cover(ls, val, printer = False):
             break
 
     if printer:
-        print("Minimal cover is:")
+        print("The minimal cover is:")
         for i in range(0, len(min_cov)):
             print(f"{min_cov[i]}*d{i+1}", end = " + ")
         print(f"0 <= {val}")
@@ -37,6 +37,7 @@ def padberg(ls, val, printer = False):
         for i in range(len(ls)):
             print(f"{ls[i]}*d{i+1}", end = " + ")
         print(f"0 <= {val}", end = "\n\n")
+        step = 0
 
     j, min_cov = minimal_cover(ls, val, printer)
     nr = len(min_cov) - 1
@@ -52,7 +53,18 @@ def padberg(ls, val, printer = False):
                 break
         coef.append(nr - optimal)
 
+        if printer:
+            step += 1
+            print(f"Padberg step {step}:")
+            for (j, i) in zip(coef, range(1, len(coef) + 1)):
+                print(f"{j}*d{i}", end = " + ")
+            print(f"0 <= {nr}")
+            for (j, i) in zip(ls, range(1, len(ls[:i]) + 1)):
+                print(f"{j}*d{i}", end = " + ")
+            print(f"0 <= {val}", end = "\n\n")
+
     if printer:
+        print("Thus the LCI becomes:")
         for (j, i) in zip(coef, range(1, len(coef) + 1)):
             print(f"{j}*d{i}", end = " + ")
         print(f"0 <= {nr}")
