@@ -5,3 +5,4 @@ from .padberg import padberg as padberg
 from .padberg import minimal_cover as minimal_cover
 from .dijkstras import dijkstras_algoritme as dijkstras_algoritme
 from .branchnbound import branch_and_bound as branch_and_bound
+from .pferschy import pferschy as pferschy
