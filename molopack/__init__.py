@@ -7,3 +7,4 @@ from .dijkstras import dijkstras_algoritme as dijkstras_algoritme
 from .branchnbound import branch_and_bound as branch_and_bound
 from .pferschy import pferschy as pferschy
 from .garfinkel import simon_n_garfinkel as simon_n_garfinkel
+from .kolgen import kolonne_generering as kolonne_generering
