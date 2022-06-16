@@ -80,7 +80,7 @@ def the_sound_of_silence(cost_matrix):
     return res, PLP.value(Model.objective)
 
 #garfinkels metode
-def simon_n_garfinkel(matrix):
+def simon_n_garfinkel(matrix, m=999):
     n = len(matrix)
 
     start_gren = (the_sound_of_silence(matrix), [0]) # Finder optimal setting med subture
