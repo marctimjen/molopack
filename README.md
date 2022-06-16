@@ -17,7 +17,9 @@ The following functions can be imported using: "from molopack import function"
 The following scripts contianing the functions have been written by:
 
 Magnus: branchnbound.py, garfinkel.py, kolgen.py & pferschy.py
+
 Lentz: Dijkstras.py
+
 Marc: Northstep.py, Vogel.py & padberg.py
 
 Note: padberg needs some work - not every minimal cover is considered.
