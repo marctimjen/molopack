@@ -1,0 +1,313 @@
+
+Log started (V20.1.0.0) Thu Jun 16 21:17:43 2022
+
+
+Problem 'CS-MasterLP-1.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Minimize
+ obj1: g1 + g2 + g3 + g4
+Subject To
+ c1: 2 g1 >= 20
+ c2: 4 g2 >= 31
+ c3: 5 g3 >= 27
+ c4: 6 g4 >= 23
+Bounds
+ All variables are >= 0.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+Tried aggregator 1 time.
+LP Presolve eliminated 4 rows and 4 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Dual simplex - Optimal:  Objective =  2.6983333333e+01
+Solution time =    0.00 sec.  Iterations = 0 (0)
+Deterministic time = 0.00 ticks  (2.29 ticks/sec)
+
+
+Variable Name           Solution Value
+g1                           10.000000
+g2                            7.750000
+g3                            5.400000
+g4                            3.833333
+
+                                                RHS Sensitivity Ranges
+Constraint Name      Dual Price            Down         Current              Up
+c1                       0.5000            zero         20.0000       +infinity
+c2                       0.2500            zero         31.0000       +infinity
+c3                       0.2000            zero         27.0000       +infinity
+c4                       0.1667            zero         23.0000       +infinity
+
+Log started (V20.1.0.0) Thu Jun 16 21:17:43 2022
+
+
+Problem 'CS-KolGen-1.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Maximize
+ obj1: 0.5 a1 + 0.25 a2 + 0.2 a3 + 0.1667 a4
+Subject To
+ c1: 7 a1 + 5 a2 + 4 a3 + 3 a4 <= 20
+Bounds
+      a1 >= 0
+      a2 >= 0
+      a3 >= 0
+      a4 >= 0
+Generals
+ a1  a2  a3  a4 
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+Found incumbent of value 0.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve added 1 rows and 1 columns.
+Reduced MIP has 2 rows, 5 columns, and 7 nonzeros.
+Reduced MIP has 0 binaries, 5 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 1 columns.
+MIP Presolve added 1 rows and 1 columns.
+Reduced MIP has 2 rows, 5 columns, and 7 nonzeros.
+Reduced MIP has 0 binaries, 5 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.00 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.00 sec. (0.00 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.0000        4.0002              --- 
+*     0+    0                            1.2001        4.0002           233.32%
+*     0     0      integral     0        1.3334        1.3334        2    0.00%
+Elapsed time = 0.02 sec. (0.02 ticks, tree = 0.00 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.02 sec. (0.02 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.02 sec. (0.02 ticks)
+
+Solution pool: 3 solutions saved.
+
+MIP - Integer optimal solution:  Objective =  1.3334000000e+00
+Solution time =    0.02 sec.  Iterations = 2  Nodes = 0
+Deterministic time = 0.02 ticks  (1.18 ticks/sec)
+
+
+Incumbent solution
+Variable Name           Solution Value
+a1                            2.000000
+a4                            2.000000
+All other variables matching '*' are 0.
+
+Log started (V20.1.0.0) Thu Jun 16 21:17:43 2022
+
+
+Problem 'CS-MasterLP-2.lp' read.
+Read time = 0.02 sec. (0.00 ticks)
+Minimize
+ obj1: g1 + g2 + g3 + g4 + g5
+Subject To
+ c1: 2 g1 + 2 g5 >= 20
+ c2: 4 g2 >= 31
+ c3: 5 g3 >= 27
+ c4: 6 g4 + 2 g5 >= 23
+Bounds
+ All variables are >= 0.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 2 columns.
+Reduced LP has 2 rows, 3 columns, and 4 nonzeros.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            16.983333
+
+Dual simplex - Optimal:  Objective =  2.3650000000e+01
+Solution time =    0.00 sec.  Iterations = 2 (0)
+Deterministic time = 0.01 ticks  (5.12 ticks/sec)
+
+
+Variable Name           Solution Value
+g2                            7.750000
+g3                            5.400000
+g4                            0.500000
+g5                           10.000000
+All other variables matching '*' are 0.
+
+                                                RHS Sensitivity Ranges
+Constraint Name      Dual Price            Down         Current              Up
+c1                       0.3333            zero         20.0000         23.0000
+c2                       0.2500            zero         31.0000       +infinity
+c3                       0.2000            zero         27.0000       +infinity
+c4                       0.1667         20.0000         23.0000       +infinity
+
+Log started (V20.1.0.0) Thu Jun 16 21:17:43 2022
+
+
+Problem 'CS-KolGen-2.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Maximize
+ obj1: 0.3333 a1 + 0.25 a2 + 0.2 a3 + 0.1667 a4
+Subject To
+ c1: 7 a1 + 5 a2 + 4 a3 + 3 a4 <= 20
+Bounds
+      a1 >= 0
+      a2 >= 0
+      a3 >= 0
+      a4 >= 0
+Generals
+ a1  a2  a3  a4 
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+Found incumbent of value 0.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve added 1 rows and 1 columns.
+Reduced MIP has 2 rows, 5 columns, and 7 nonzeros.
+Reduced MIP has 0 binaries, 5 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 1 columns.
+MIP Presolve added 1 rows and 1 columns.
+Reduced MIP has 2 rows, 5 columns, and 7 nonzeros.
+Reduced MIP has 0 binaries, 5 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.00 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.00 sec. (0.00 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.0000        3.6668              --- 
+      0     0        1.1002     1        0.0000        1.1002        0     --- 
+*     0+    0                            1.0835        1.1002             1.54%
+      0     0        cutoff              1.0835                      0     --- 
+Elapsed time = 0.05 sec. (0.03 ticks, tree = 0.01 MB, solutions = 2)
+
+Root node processing (before b&c):
+  Real time             =    0.06 sec. (0.03 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.06 sec. (0.03 ticks)
+
+Solution pool: 2 solutions saved.
+
+MIP - Integer optimal solution:  Objective =  1.0835000000e+00
+Solution time =    0.06 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.03 ticks  (0.47 ticks/sec)
+
+
+Incumbent solution
+Variable Name           Solution Value
+a2                            1.000000
+a4                            5.000000
+All other variables matching '*' are 0.
+
+Log started (V20.1.0.0) Thu Jun 16 21:17:44 2022
+
+
+Problem 'CS-MasterLP-3.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Minimize
+ obj1: g1 + g2 + g3 + g4 + g5 + g6
+Subject To
+ c1: 2 g1 + 2 g5 >= 20
+ c2: 4 g2 + g6 >= 31
+ c3: 5 g3 >= 27
+ c4: 6 g4 + 2 g5 + 5 g6 >= 23
+Bounds
+ All variables are >= 0.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 1 columns.
+Reduced LP has 3 rows, 5 columns, and 7 nonzeros.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            13.150000
+
+Dual simplex - Optimal:  Objective =  2.3600000000e+01
+Solution time =    0.00 sec.  Iterations = 3 (0)
+Deterministic time = 0.01 ticks  (6.85 ticks/sec)
+
+
+Variable Name           Solution Value
+g2                            7.600000
+g3                            5.400000
+g5                           10.000000
+g6                            0.600000
+All other variables matching '*' are 0.
+
+                                                RHS Sensitivity Ranges
+Constraint Name      Dual Price            Down         Current              Up
+c1                       0.3500            zero         20.0000         23.0000
+c2                       0.2500          0.6000         31.0000       +infinity
+c3                       0.2000            zero         27.0000       +infinity
+c4                       0.1500         20.0000         23.0000        175.0000
+
+Log started (V20.1.0.0) Thu Jun 16 21:17:44 2022
+
+
+Problem 'CS-KolGen-3.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Maximize
+ obj1: 0.35 a1 + 0.25 a2 + 0.2 a3 + 0.15 a4
+Subject To
+ c1: 7 a1 + 5 a2 + 4 a3 + 3 a4 <= 20
+Bounds
+      a1 >= 0
+      a2 >= 0
+      a3 >= 0
+      a4 >= 0
+Generals
+ a1  a2  a3  a4 
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+Found incumbent of value 0.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve added 1 rows and 1 columns.
+Reduced MIP has 2 rows, 5 columns, and 7 nonzeros.
+Reduced MIP has 0 binaries, 5 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 1 columns.
+MIP Presolve added 1 rows and 1 columns.
+Reduced MIP has 2 rows, 5 columns, and 7 nonzeros.
+Reduced MIP has 0 binaries, 5 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.00 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.00 sec. (0.00 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.0000        3.6000              --- 
+*     0     0      integral     0        1.0000        1.0000        0    0.00%
+Elapsed time = 0.02 sec. (0.02 ticks, tree = 0.00 MB, solutions = 2)
+
+Root node processing (before b&c):
+  Real time             =    0.02 sec. (0.02 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.02 sec. (0.02 ticks)
+
+Solution pool: 2 solutions saved.
+
+MIP - Integer optimal solution:  Objective =  1.0000000000e+00
+Solution time =    0.02 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.02 ticks  (1.08 ticks/sec)
+
+
+Incumbent solution
+Variable Name           Solution Value
+a2                            4.000000
+All other variables matching '*' are 0.

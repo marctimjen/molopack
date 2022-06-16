@@ -9,13 +9,14 @@ The following functions can be imported using: "from molopack import function"
 - vogel: Apply Vogels algorithm
 - pferschy:
 - simon_n_garfinkel:
-- branch_and_bound
+- branch_and_bound:
+- kolonne_generering:
 
 
 
 The following scripts contianing the functions have been written by:
 
-Magnus: branchnbound.py, garfinkel.py, pferschy.py,
+Magnus: branchnbound.py, garfinkel.py, kolgen.py & pferschy.py
 Lentz: Dijkstras.py
 Marc: Northstep.py, Vogel.py & padberg.py
 
