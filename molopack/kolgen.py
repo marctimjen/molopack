@@ -1,4 +1,5 @@
-#spaghetti kode:
+import os
+
 def kolonne_generering(wides, demand, C, max_iterationer=10, start_kol=False):
     sol_dicts = []
     obj = 2
