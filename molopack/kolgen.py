@@ -1,6 +1,6 @@
 import os
 
-def kolonne_generering(wides, demand, C, max_iterationer=10, start_kol=False):
+def kolonne_generering(wides, demand, C, ms, kg, max_iterationer=10, start_kol=False):
     sol_dicts = []
     obj = 2
     iteration = 0
@@ -37,7 +37,7 @@ def kolonne_generering(wides, demand, C, max_iterationer=10, start_kol=False):
         f.close()
 
         #Kør Master
-        master = !cplex -c {"read " + master_name} "display problem all" "optimize" "display solution variables *" "display sensitivity rhs *"
+        master = ms(master_name)
 
         linje = 1
         dual_vals = []
@@ -74,7 +74,7 @@ def kolonne_generering(wides, demand, C, max_iterationer=10, start_kol=False):
         f.close()
 
         #kør KolGen
-        kol_gen = !cplex -c {"read "+kol_gen_name} "display problem all" "optimize" "display solution variables *"
+        kol_gen = kg(kol_gen_name)
 
         for string in kol_gen :
             if "Objective =" in string:
