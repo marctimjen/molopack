@@ -27,3 +27,7 @@ Note: padberg needs some work - not every minimal cover is considered.
 
 To get the package install it by:
 pip install git+https://github.com/marctimjen/molopack.git
+In the pop-up window "CredentialHelperSelector", choose the "manager-core".
+
+If using conda get pip by write the foolowing line in the given environment:
+conda install git pip
